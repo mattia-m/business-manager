@@ -1,0 +1,36 @@
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+	<separator></separator>
+	<include src="/component/menu.zul" />
+
+	<window vflex="true" position="center"
+		viewModel="@id('vm') @init('mmarella.vm.ProdottiVM')">
+		<vlayout>
+			<label value="elenco prodotti al momento registrati in magazzino" />
+		</vlayout>
+		<grid height="350px" model="@load(vm.products)"
+			emptyMessage="Nessun prodotto presente">
+			<columns>
+				<column label="Nome" />
+				<column label="Codice a barre" />
+				<column label="Biologico" />
+				<column width="80px" />
+				<column label="Ricarica"
+			onClick="@command('refresh')" />
+			</columns>
+			<template name="model">
+				<row>
+					<label value="@load(each.name)" />
+					<label value="@load(each.barcode)" />
+					<label value="@load(each.organic)" />
+					<button label="Elimina"
+			onClick="@command('deleteProduct', prodotto=each)" />
+				</row>
+			</template>
+		</grid>
+		<hlayout>
+		<button label="Inserisci"
+			onClick="@command('createProduct', prodotto=each)" />
+		</hlayout>
+	</window>
+</zk>

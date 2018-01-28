@@ -1,0 +1,10 @@
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+	<separator></separator>
+	<include src="/component/menu.zul"/>
+	<window vflex="true"  position="center">
+		<vlayout>
+			<label value="fjkhkf"/>
+			<label value="kfggkf"/>
+		</vlayout>
+	</window>
+</zk>

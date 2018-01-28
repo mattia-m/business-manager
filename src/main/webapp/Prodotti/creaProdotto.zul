@@ -1,0 +1,40 @@
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="modalDialogCreateProduct" title="Create Product"
+		border="normal" width="460px" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('mmarella.vm.CreaProdottoVM')"
+		position="center,center" closable="true"
+		action="show: slideDown;hide: slideUp">
+
+		<separator></separator>
+		<grid>
+			<columns>
+				<column label="" hflex="1" />
+				<column label="" hflex="1" />
+			</columns>
+			<rows>
+				<row>
+					<hlayout>
+						<label value="Barcode" width="150px" />
+						<hlayout>
+							<textbox value="@bind(vm.barcode)"
+								width="150px" tabindex="1" />
+						</hlayout>
+					</hlayout>
+					<hlayout>
+						<label value="name" width="150px" />
+						<hlayout>
+							<textbox value="@bind(vm.name)"
+								width="150px" tabindex="1" />
+						</hlayout>
+						<checkbox id="l1" label="Organic"
+							value="@bind(vm.organic)" />
+
+					</hlayout>
+				</row>
+			</rows>
+		</grid>
+		<button label="Inserisci"
+			onClick="@command('inserisciProdotto')" />
+	</window>
+</zk>

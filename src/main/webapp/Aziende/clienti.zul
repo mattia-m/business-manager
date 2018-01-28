@@ -1,0 +1,39 @@
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+	<separator></separator>
+	<include src="/component/menu.zul" />
+
+	<window vflex="true" position="center"
+		viewModel="@id('vm') @init('mmarella.vm.ClientsVM')">
+		<vlayout>
+			<label value="elenco clienti al momento registrati" />
+		</vlayout>
+		<grid height="350px" model="@load(vm.clients)"
+			emptyMessage="Nessun Cliente presente">
+			<columns>
+				<column label="Descrizione" />
+				<column label="P.IVA/CodiceFiscale" />
+				<column label="Email" />
+				<column width="Telefono" />
+				<column width="Indirizzo" />
+				<column label="Ricarica"
+			onClick="@command('refresh')" />
+			</columns>
+			<template name="model">
+				<row>
+					<label value="@load(each.description)" />
+					<label value="@load(each.taxIdentification)" />
+					<label value="@load(each.email)" />
+					<label value="@load(each.phoneNumber)" />
+					<label value="@load(each.address)" />
+					<button label="Elimina"
+			onClick="@command('deleteProduct', prodotto=each)" />
+				</row>
+			</template>
+		</grid>
+		<hlayout>
+		<button label="Inserisci"
+			onClick="@command(insertCLients)" />
+		</hlayout>
+	</window>
+</zk>
