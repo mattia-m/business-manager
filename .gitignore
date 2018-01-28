@@ -9,3 +9,5 @@ target/classes/META-INF/maven/mmarella/business-manager/pom.properties
 target/classes/META-INF/maven/mmarella/business-manager/pom.xml
 .springBeans
 .settings/org.eclipse.wst.common.project.facet.core.xml
+target/*
+
