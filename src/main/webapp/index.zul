@@ -1,10 +1,44 @@
-<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
-	<separator></separator>
-	<include src="/component/menu.zul"/>
-	<window vflex="true"  position="center">
+<zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<style src="/static/bootstrap/css/bootstrap.css"></style>
+	<style src="/static/css/login.css"></style>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<include src="/component/menu.zul" />
+	<window vflex="true" position="center"
+		viewModel="@id('vm') @init('mmarella.vm.IndexVM')">
 		<vlayout>
-			<label value="fjkhkf"/>
-			<label value="kfggkf"/>
+			<label
+				value="elenco prodotti al momento registrati in magazzino" />
 		</vlayout>
+		<grid height="350px" model="@load(vm.products)"
+			emptyMessage="Nessun prodotto presente">
+			<columns>
+				<column label="Nome" />
+				<column label="Codice a barre" />
+				<column label="Biologico" />
+				<column label="" />
+			</columns>
+			<template name="model">
+				<row>
+					<label value="@load(each.name)" />
+					<label value="@load(each.barcode)" />
+					<label value="@load(each.organic)" />
+					<button label="Elimina"
+						onClick="@command('deleteProduct', prodotto=each)"
+						class="btn btn-danger" />
+				</row>
+			</template>
+		</grid>
+		<hlayout>
+			<button label="Inserisci"
+				onClick="@command('createProduct')" class="btn  btn-info" />
+			<button label="Ricarica" onClick="@command('refresh')"
+				class="btn btn-info" />
+		</hlayout>
 	</window>
 </zk>
