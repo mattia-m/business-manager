@@ -1,10 +1,12 @@
 <zk>
 	<window apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('mmarella.vm.MenuVM')">
-		<style>
-			.z-menubar-hor, .z-menubar-ver { border: 1px solid #D8D8D8;
-			} .content {overflow-x: hidden;overflow-y: scroll;}
-		</style>
+		<style src="/static/bootstrap/css/bootstrap.css"></style>
+		<style src="/static/css/menu.css"></style>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="/static/bootstrap/js/bootstrap.js"></script>
 
 		<panel border="normal">
 			<panelchildren>
@@ -16,114 +18,43 @@
 								<menupopup>
 									<menuitem label="Prodotto"
 										onClick="@command('creaProdotto')"
-										image="/component/img/file_new_writer.png" />
-									<menuitem label="Materia Prima"
-										onClick="alert(self.label)"
-										image="/component/img/file_new_spreadsheet.png" />
-									<menuitem label="Produzione"
-										onClick="alert(self.label)"
-										image="/component/img/file_new_presentation.png" />
+										/>
+
 									<menuitem label="Cliente"
 										onClick="@command('createBusiness')"
-										image="/component/img/file_new_presentation.png" />
+										/>
 									<menuitem label="Fornitore"
 										onClick="@command('createBusiness')"
-										image="/component/img/file_new_presentation.png" />
+										/>
 								</menupopup>
 							</menu>
-							<menuitem label="Open.."
-								onClick="alert(self.label)"
-								image="/component/img/file_open.png" />
-							<menuseparator></menuseparator>
-							<menuitem label="Save"
-								onClick="alert(self.label)"
-								image="/component/img/file_save.png" />
-							<menuitem label="Save As..."
-								onClick="alert(self.label)"
-								image="/component/img/file_save-as.png" />
-							<menuitem label="Save All"
-								onClick="alert(self.label)"
-								image="/component/img/file_save-all.png" />
-							<menuitem label="Close"
-								onClick="alert(self.label)"
-								image="/component/img/file_close.png" />
-							<menuitem label="Close All"
-								onClick="alert(self.label)"
-								image="/component/img/file_close-all.png" />
-							<menuseparator></menuseparator>
-							<menuitem label="Import"
-								onClick="alert(self.label)"
-								image="/component/img/file_import.png" />
-							<menuitem label="Export" disabled="true"
-								image="/component/img/file_export.png" />
-							<menuseparator></menuseparator>
-							<menuitem label="Exit" disabled="true"
-								image="/component/img/file_exit.png" />
 						</menupopup>
 					</menu>
 					<menu label="Prodotti">
 						<menupopup>
-							<menu label="Lotti"
-								image="/component/img/file_new.png">
-								<menupopup>
-									<menuitem label="Nuovo"
-										onClick="alert(self.label)"
-										image="/component/img/file_new_writer.png" />
-									<menuitem label="Storico"
-										onClick="alert(self.label)"
-										image="/component/img/file_new_spreadsheet.png" />
-									<menuitem label="Cerca lotto"
-										onClick="alert(self.label)"
-										image="/component/img/file_new_presentation.png" />
-								</menupopup>
-							</menu>
-							<menuitem label="Inserisci"
-								onClick="@command('creaProdotto')"
-								image="/component/img/edit_undo.png" />
-							<menuitem label="Catalogo Prodotti"
-								disabled="false" image="/component/img/edit_redo.png" 
-								onClick="@command('productCatalogs')"/>
-							<menuseparator></menuseparator>
-							<menuitem label="Cut"
-								onClick="alert(self.label)" image="/component/img/edit_cut.png" />
-							<menuitem label="Copy"
-								onClick="alert(self.label)"
-								image="/component/img/edit_copy.png" />
-							<menuitem label="Paste"
-								onClick="alert(self.label)"
-								image="/component/img/edit_paste.png" />
-							<menuseparator></menuseparator>
-							<menuitem label="Select All"
-								onClick="alert(self.label)"
-								image="/component/img/edit_select-all.png" />
-						</menupopup>
-					</menu>
-					
-					<menu label="Clienti/Fornitori"
-						image="/component/img/file_new.png">
-						<menupopup>
 							<menuitem label="Nuovo"
-								onClick="@command('createBusiness')"
-								image="/component/img/file_new_writer.png" />
-							<menuitem label="Elenco Clienti"
-								onClick="@command('clients')"/>
-							<menuitem label="Cerca cliente/fornitore"
+								onClick="@command('creaProdotto')"
+								/>
+							<menuitem label="Catalogo"
+								onClick="@command('productCatalogs')"
+								 />
+							<menuitem label="Cerca Lavorazione"
 								onClick="alert(self.label)"
-								image="/component/img/file_new_presentation.png" />
+								 />
 						</menupopup>
 					</menu>
 					<menu label="Lavorazioni"
-						image="/component/img/file_new.png">
+						>
 						<menupopup>
 							<menuitem label="Nuovo"
 								onClick="alert(self.label)"
-								image="/component/img/file_new_writer.png" />
+								/>
 							<menuitem label="Storico"
 								onClick="alert(self.label)"
-								image="/component/img/file_new_spreadsheet.png" />
+								 />
 							<menuitem label="Cerca Lavorazione"
 								onClick="alert(self.label)"
-								image="/component/img/file_new_presentation.png" />
+								 />
 						</menupopup>
 					</menu>
 

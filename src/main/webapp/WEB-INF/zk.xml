@@ -42,6 +42,7 @@
 		<label-location>/WEB-INF/labels.properties</label-location>
 		<ui-factory-class>org.zkoss.zk.ui.http.SerializableUiFactory</ui-factory-class>
 	</system-config>
+	
 
 	<library-property>
     	<name>org.zkoss.web.preferred.locale</name>

@@ -1,11 +1,18 @@
 <zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="modalDialogCreateProduct" title="Create Product"
-		border="normal" width="460px" apply="org.zkoss.bind.BindComposer"
+		border="normal" width="700px" apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('mmarella.vm.CreaProdottoVM')"
 		position="center,center" closable="true"
 		action="show: slideDown;hide: slideUp">
 
+
+	<attribute name="onClose"><![CDATA[
+		if(Messagebox.show("Are you sure to close the window?", "Question",
+			Messagebox.OK | Messagebox.CANCEL, Messagebox.QUESTION) != Messagebox.OK){
+			event.stopPropagation();
+		}
+	]]></attribute>
 		<separator></separator>
 		<grid>
 			<columns>
