@@ -20,9 +20,17 @@ public class MenuVM {
 	}
 
 	@Command
-	public void clients() {
+	public void visualizzaClienti() {
 		Executions.getCurrent().sendRedirect("/Aziende/clienti.zul");
 	}
+
+	@Command
+	public void visualizzaFornitori() {
+		Executions.getCurrent().sendRedirect("/Aziende/fornitori.zul");
+	}
+
+
+
 
 	@Command
 	public void createBusiness() {

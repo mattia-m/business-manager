@@ -14,10 +14,9 @@
 				<column label="Descrizione" />
 				<column label="P.IVA/CodiceFiscale" />
 				<column label="Email" />
-				<column width="Telefono" />
-				<column width="Indirizzo" />
-				<column label="Ricarica"
-			onClick="@command('refresh')" />
+				<column label="Telefono" />
+				<column label="Indirizzo" />
+				<column />
 			</columns>
 			<template name="model">
 				<row>
@@ -26,14 +25,17 @@
 					<label value="@load(each.email)" />
 					<label value="@load(each.phoneNumber)" />
 					<label value="@load(each.address)" />
-					<button label="Elimina"
-			onClick="@command('deleteProduct', prodotto=each)" />
+					<button label="Modifica"
+			onClick="@command('modifyClients', business=each)" />
 				</row>
 			</template>
 		</grid>
 		<hlayout>
-		<button label="Inserisci"
-			onClick="@command(insertCLients)" />
+
+			<button label="Inserisci"
+				onClick="@command('insertClient')" />
+			<button label="Ricarica"
+					onClick="@command('refreshClients')" />
 		</hlayout>
 	</window>
 </zk>

@@ -1,5 +1,6 @@
 package mmarella.vm;
 
+import org.zkoss.bind.BindUtils;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
@@ -22,23 +23,33 @@ public class CreateBusinessVM {
 	private boolean clientFlag;
 	private boolean sellerFlag;
 	private String socialSecurity;
+	private boolean showDialog = true;
 
 	@WireVariable
 	private BusinessDao businessDao;
 
-	@NotifyChange()
+	@NotifyChange("showDialog")
 	@Command
 	public void insertBusiness() {
 		if (businessDao.findByVatNumber(vatNumber) != null) {
-			// TODO notify the user he is inserting the same product!
 			Clients.showNotification("l'azienda esiste gia", true);
 		} else {
 			Business business = new Business(businessName, name, surname, address, phoneNumber, vatNumber, clientFlag,
 					sellerFlag, socialSecurity);
 			businessDao.save(business);
-			Clients.showNotification("Azienda inserita");
+			this.setShowDialog(false);
+			BindUtils.postGlobalCommand(null, null, "refreshClients",null);
+			BindUtils.postGlobalCommand(null, null, "refreshSuppliers",null);
 
 		}
+	}
+
+	public boolean getShowDialog() {
+		return showDialog;
+	}
+
+	public void setShowDialog(boolean showDialog) {
+		this.showDialog = showDialog;
 	}
 
 	public String getBusinessName() {

@@ -44,7 +44,6 @@ public class ProdottiVM {
 	public void createProduct() {
 		Window window = (Window) Executions.createComponents("/Prodotti/creaProdotto.zul", null, null);
 		window.doModal();
-		products = (List<Product>) productDao.findAll();
 	}
 
 	public List<Product> getProducts() {

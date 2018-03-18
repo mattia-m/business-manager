@@ -1,12 +1,12 @@
 <zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
-	<window id="modalDialogCreateBusiness" title="Create Business"
+	<window title="Create Business"
 		border="normal" width="460px" apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('mmarella.vm.CreateBusinessVM')"
 		position="center,center" closable="true"
-		action="show: slideDown;hide: slideUp">
+		action="show: slideDown;hide: slideUp"
+			visible="@load(vm.showDialog)">
 
-		<separator></separator>
 		<grid>
 			<columns>
 				<column label="" hflex="1" />

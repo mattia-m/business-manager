@@ -43,6 +43,19 @@
 								 />
 						</menupopup>
 					</menu>
+					<menu label="Clienti/Fornitori">
+						<menupopup>
+							<menuitem label="Clienti"
+									  onClick="@command('visualizzaClienti')"
+							/>
+							<menuitem label="Fornitori"
+									  onClick="@command('visualizzaFornitori')"
+							/>
+							<menuitem label="Cerca Cliente/Fornitore"
+									  onClick="alert(self.label)"
+							/>
+						</menupopup>
+					</menu>
 					<menu label="Lavorazioni"
 						>
 						<menupopup>
