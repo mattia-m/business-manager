@@ -1,19 +1,12 @@
 <zk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
-	<window id="modalDialogCreateProduct" title="Create Product"
-		border="normal" width="700px" apply="org.zkoss.bind.BindComposer"
+	<window title="Create Product"
+		border="normal" width="auto" apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('mmarella.vm.CreaProdottoVM')"
 		position="center,center" closable="true"
-		action="show: slideDown;hide: slideUp">
+		action="show: slideDown;hide: slideUp"
+			visible="@load(vm.showDialog)">
 
-
-	<attribute name="onClose"><![CDATA[
-		if(Messagebox.show("Are you sure to close the window?", "Question",
-			Messagebox.OK | Messagebox.CANCEL, Messagebox.QUESTION) != Messagebox.OK){
-			event.stopPropagation();
-		}
-	]]></attribute>
-		<separator></separator>
 		<grid>
 			<columns>
 				<column label="" hflex="1" />
@@ -29,11 +22,18 @@
 						</hlayout>
 					</hlayout>
 					<hlayout>
-						<label value="name" width="150px" />
+						<label value="Nome" width="150px" />
 						<hlayout>
 							<textbox value="@bind(vm.name)"
 								width="150px" tabindex="1" />
 						</hlayout>
+
+						<label value="Peso/Volume" width="150px" />
+						<hlayout>
+							<textbox value="@bind(vm.weight)"
+									 width="150px" tabindex="1" />
+						</hlayout>
+
 						<checkbox id="l1" label="Organic"
 							value="@bind(vm.organic)" />
 

@@ -13,24 +13,29 @@
 			<columns>
 				<column label="Nome" />
 				<column label="Codice a barre" />
+				<column label="Peso/Volume" />
 				<column label="Biologico" />
+				<column width="200px" />
 				<column width="80px" />
-				<column label="Ricarica"
-			onClick="@command('refresh')" />
 			</columns>
 			<template name="model">
 				<row>
 					<label value="@load(each.name)" />
 					<label value="@load(each.barcode)" />
+					<label value="@load(each.weight)" />
 					<label value="@load(each.organic)" />
+					<button label="Lotti in magazzino"
+							onClick="@command('viewbatch', prodotto=each)" />
 					<button label="Elimina"
 			onClick="@command('deleteProduct', prodotto=each)" />
 				</row>
 			</template>
 		</grid>
 		<hlayout>
-		<button label="Inserisci"
+			<button label="Inserisci"
 			onClick="@command('createProduct', prodotto=each)" />
+			<button label="Ricarica"
+					onClick="@command('refreshProducts')" />
 		</hlayout>
 	</window>
 </zk>

@@ -11,7 +11,7 @@
 	<include src="/component/menu.zul" />
 	<window vflex="true" position="center"
 		viewModel="@id('vm') @init('mmarella.vm.IndexVM')">
-		<vlayout>
+		<!--<vlayout>
 			<label
 				value="elenco prodotti al momento registrati in magazzino" />
 		</vlayout>
@@ -40,5 +40,6 @@
 			<button label="Ricarica" onClick="@command('refresh')"
 				class="btn btn-info" />
 		</hlayout>
+		-->
 	</window>
 </zk>

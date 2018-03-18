@@ -3,10 +3,7 @@ package mmarella.vm;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.zkoss.bind.annotation.BindingParam;
-import org.zkoss.bind.annotation.Command;
-import org.zkoss.bind.annotation.Init;
-import org.zkoss.bind.annotation.NotifyChange;
+import org.zkoss.bind.annotation.*;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
@@ -37,11 +34,12 @@ public class ProdottiVM {
 
 	@NotifyChange("products")
 	@Command
-	public void refresh() {
+	@GlobalCommand
+	public void refreshProducts() {
 		products = (List<Product>) productDao.findAll();
 	}
 
-	@NotifyChange("products")
+
 	@Command
 	public void createProduct() {
 		Window window = (Window) Executions.createComponents("/Prodotti/creaProdotto.zul", null, null);

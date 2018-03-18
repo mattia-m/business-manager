@@ -21,6 +21,9 @@ public class Product {
 	private String barcode;
 
 	@NotNull
+	private String weight;
+
+	@NotNull
 	private String name;
 
 	@NotNull
@@ -37,6 +40,14 @@ public class Product {
 		this.barcode = barcode;
 		this.name = name;
 		this.organic = organic;
+	}
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
 	}
 
 	public long getId() {
