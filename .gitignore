@@ -11,3 +11,5 @@ target/classes/META-INF/maven/mmarella/business-manager/pom.xml
 .settings/org.eclipse.wst.common.project.facet.core.xml
 target/*
 
+.idea/*
+business-manager.iml
