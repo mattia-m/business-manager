@@ -13,3 +13,4 @@ target/*
 
 .idea/*
 business-manager.iml
+*.log

@@ -2,6 +2,8 @@ package mmarella.vm;
 
 import mmarella.dao.BusinessDao;
 import mmarella.models.Business;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.GlobalCommand;
 import org.zkoss.bind.annotation.Init;
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class FornitoriVM {
 
+    private static final Logger logger = LogManager.getLogger(FornitoriVM.class);
 
     @WireVariable
     private BusinessDao businessDao;
@@ -23,6 +26,7 @@ public class FornitoriVM {
 
     @Init
     public void init() {
+        logger.info("logging init of suppliers page");
         suppliers = (List<Business>) businessDao.findAllBySellerFlag(true);
     }
 
