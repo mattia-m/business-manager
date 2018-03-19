@@ -25,8 +25,8 @@
                     <label value="@load(each.email)" />
                     <label value="@load(each.phoneNumber)" />
                     <label value="@load(each.address)" />
-                    <!-- <button label="Modifica"
-                            onClick="@command('modifyClients', business=each)" /> -->
+                    <button label="Modifica"
+                            onClick="@command('modifyClients', business=each)" />
                 </row>
             </template>
         </grid>

@@ -26,7 +26,7 @@ public class IndexVM {
 
 	@Init
 	public void init() {
-		products = (List<Product>) productDao.findAll();
+//		products = (List<Product>) productDao.findAll();
 	}
 
 	@NotifyChange("products")
