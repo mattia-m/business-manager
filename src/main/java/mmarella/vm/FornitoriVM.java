@@ -28,7 +28,7 @@ public class FornitoriVM {
 
     @Init
     public void init() {
-        logger.info("logging init of suppliers page");
+        //logger.info("logging init of suppliers page");
         suppliers = (List<Business>) businessDao.findAllBySellerFlag(true);
     }
 

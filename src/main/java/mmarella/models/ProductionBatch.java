@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "LOTTI")
@@ -26,13 +27,17 @@ public class ProductionBatch {
 	private String name;
 
 	@NotNull
+	private Date productionDate;
+
+	@NotNull
 	private Integer quantity;
 
-	public ProductionBatch(Product product, String name, Integer quantity) {
+	public ProductionBatch(Product product, String name, Integer quantity, Date productionDate) {
 		super();
 		this.product = product;
 		this.name = name;
 		this.quantity = quantity;
+		this.productionDate = productionDate;
 	}
 
 	public long getId() {
@@ -67,4 +72,11 @@ public class ProductionBatch {
 		this.quantity = quantity;
 	}
 
+	public Date getProductionDate() {
+		return productionDate;
+	}
+
+	public void setProductionDate(Date productionDate) {
+		this.productionDate = productionDate;
+	}
 }
