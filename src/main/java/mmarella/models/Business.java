@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -43,7 +44,6 @@ public class Business {
 	@NotNull
 	private boolean sellerFlag;
 	// CF
-	@NotNull
 	private String socialSecurity;
 
 	public long getId() {
@@ -94,8 +94,49 @@ public class Business {
 		this.socialSecurity = socialSecurity;
 	}
 
+	public String getBusinessName() {
+		return businessName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public boolean isClientFlag() {
+		return clientFlag;
+	}
+
+	public void setClientFlag(boolean clientFlag) {
+		this.clientFlag = clientFlag;
+	}
+
+	public boolean isSellerFlag() {
+		return sellerFlag;
+	}
+
+	public void setSellerFlag(boolean sellerFlag) {
+		this.sellerFlag = sellerFlag;
+	}
+
+	public String getSurname() {
+
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
+	}
+
 	public Business(String name, String address, String email, String phoneNumber, String vatNumber,
-			String socialSecurity) {
+					String socialSecurity) {
 		this.name = name;
 		this.email = email;
 		this.address = address;
@@ -116,7 +157,7 @@ public class Business {
 		return StringUtils.isEmpty("vatNumber") ? socialSecurity : vatNumber;
 	}
 
-	public Business(String businessName, String name, String surname, String address, String phoneNumber,
+	public Business(String businessName, String name, String surname,String email, String address, String phoneNumber,
 			String vatNumber, boolean clientFlag, boolean sellerFlag, String socialSecurity) {
 		super();
 		this.businessName = businessName;

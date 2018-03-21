@@ -35,7 +35,7 @@
 						</hlayout>
 
 						<checkbox id="l1" label="Organic"
-							value="@bind(vm.organic)" />
+								  checked="@bind(vm.organic)" />
 
 					</hlayout>
 				</row>
